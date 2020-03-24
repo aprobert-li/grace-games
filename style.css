@@ -1,0 +1,22 @@
+h1 {
+    color: chocolate;
+}
+#container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    list-style: none;
+    background-color: tomato;
+    padding: 0;
+}
+.numbers {
+    font-size: 3vw;
+    text-align: center;
+    background-color: darkslategrey;
+    padding: 2%;
+    margin: 2%;
+    border: 1px solid whitesmoke;
+}
+.numbers:hover {
+    cursor: pointer;
+}
