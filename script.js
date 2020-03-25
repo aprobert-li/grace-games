@@ -1,8 +1,11 @@
 var usedArray = [];
 
+var showNumber = document.querySelector("#randomNumber");
+
 var btn = document.querySelector("button");
 
 btn.addEventListener("click", getNumber);
+
 
 function getNumber() {
   console.log("NEW CLICK");
@@ -11,6 +14,7 @@ function getNumber() {
     console.log(randomNumber);
     usedArray.push(randomNumber);
     console.log(usedArray);
+    showNumber.innerHTML = randomNumber;
     return randomNumber;
   } else {
     console.log("already used");
