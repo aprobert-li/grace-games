@@ -8,7 +8,7 @@ var audioBoom;
 
 var btn = document.querySelector("#startBtn");
 
-btn.addEventListener("touchend", getNumber);
+//btn.addEventListener("touchend", getNumber);
 btn.addEventListener("click", getNumber);
 
 var cover = document.querySelector('#cover');
