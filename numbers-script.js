@@ -13,6 +13,12 @@ btn.addEventListener("click", getNumber);
 
 var cover = document.querySelector('#cover');
 
+var buttons = document.querySelectorAll('.button');
+if (window.innerWidth < 1000) {
+  alert(window.innerWidth);
+  btn.style.fontSize = "3vw";
+}
+
 function getNumber() {
   btn.removeEventListener("touchend", getNumber);
   btn.removeEventListener("click", getNumber);
