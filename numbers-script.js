@@ -18,19 +18,15 @@ function getNumber() {
   btn.removeEventListener("mouseup", getNumber);
   cover.style.display = "none";
   replay.style.display = "inline-block";
-  console.log("NEW CLICK");
   randomNumber = Math.floor(Math.random() * 10);
   if (!usedArray.includes(randomNumber)) {
-    console.log(randomNumber);
     usedArray.push(randomNumber);
-    console.log(usedArray);
     numberAudio = document.createElement('audio');
     numberAudio.src=`audio/${randomNumber}.mp3`;
     numberAudio.play();
-    choosing();
+    chooseNumber();
     return randomNumber;
   } else {
-    console.log("already used");
     if (usedArray.length < 10) {
       getNumber();
     } 
@@ -39,11 +35,10 @@ function getNumber() {
       btn.removeEventListener("mouseup", getNumber);
     }
   }
-  
 }
 
-function choosing() {
   var counter = 0;
+  
   var numbers = document.querySelectorAll(".numLets");
   var unicorns = document.querySelectorAll('.unicorns');
 
@@ -72,7 +67,9 @@ function choosing() {
         counter++;
         
         if(counter == 10) {
-          alert("ALL DONE");
+          playAgainBtn.style.display="block";
+          congrats.style.display="block";
+          gameOver.style.display="block";
         }
     }
   }
@@ -80,13 +77,36 @@ function choosing() {
     n.addEventListener("touchstart", chooseNumber);
     n.addEventListener("mouseup", chooseNumber);
   }
-}
 
 var replay = document.querySelector('#replay');
 replay.addEventListener("touchstart", replayAudio);
 replay.addEventListener("mouseup", replayAudio);
 function replayAudio() {
   numberAudio.play();
+}
+
+var playAgainBtn = document.querySelector('#playagain');
+var gameOver =document.querySelector('#gameover');
+var congrats =document.querySelector('#congrats');
+playAgainBtn.addEventListener('touchstart', playagain);
+playAgainBtn.addEventListener("mouseup", playagain);
+
+
+function playagain() {
+  
+  playAgainBtn.style.display="none";
+  congrats.style.display="none";
+  gameOver.style.display="none";
+  counter=0;
+  for (u of unicorns) {
+    u.style.opacity=0;
+  }
+  for (n of numbers) {
+    n.style.backgroundColor="white";
+  }
+  btn.addEventListener("touchstart", getNumber);
+  btn.addEventListener("mouseup", getNumber);
+  usedArray = [];
 }
 
 
