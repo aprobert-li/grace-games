@@ -1,19 +1,141 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Numbers and Letters</title>
+        <title>NUMBERS</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         
     </head>
     <body>
-        <h1>NUMBERS and LETTERS</h1>
-        <br>
-        <a href="numbers.html"><div class='bigBtn' id="playNumbers">NUMBERS</div></a>
-        <a href="letters.html"><div class='bigBtn' id="playLetters">LETTERS</div></a>
 
+        <ul id="container">
+            <li class="numLets" id="zero" data-number=0>0</li>
+            <li class="numLets" id="one" data-number=1>1</li>
+            <li class="numLets" id="two" data-number=2>2</li>
+            <li class="numLets" id="three" data-number=3>3</li>
+            <li class="numLets" id="four" data-number=4>4</li>
+            <li class="numLets" id="five" data-number=5>5</li>
+            <li class="numLets" id="six" data-number=6>6</li>
+            <li class="numLets" id="seven" data-number=7>7</li>
+            <li class="numLets" id="eight" data-number=8>8</li>
+            <li class="numLets" id="nine" data-number=9>9</li>
+            <li class="numLets teens" id="ten" data-number=10>10</li>
+            <li class="numLets teens" id="eleven" data-number=11>11</li>
+            <li class="numLets teens" id="twelve" data-number=12>12</li>
+            <li class="numLets teens" id="thirteen" data-number=13>13</li>
+            <li class="numLets teens" id="fourteen" data-number=14>14</li>
+            <li class="numLets teens" id="fifteen" data-number=15>15</li>
+            <li class="numLets teens" id="sixteen" data-number=16>16</li>
+            <li class="numLets teens" id="seventeen" data-number=17>17</li>
+            <li class="numLets teens" id="eighteen" data-number=18>18</li>
+            <li class="numLets teens" id="nineteen" data-number=19>19</li>
+            <li class="numLets twenties" id="twenty" data-number=20>20</li>
+            <li class="numLets twenties" id="twentyone" data-number=21>21</li>
+            <li class="numLets twenties" id="twentytwo" data-number=22>22</li>
+            <li class="numLets twenties" id="twentythree" data-number=23>23</li>
+            <li class="numLets twenties" id="twentyfour" data-number=24>24</li>
+            <li class="numLets twenties" id="twentyfive" data-number=25>25</li>
+            <li class="numLets twenties" id="twentysix" data-number=26>26</li>
+            <li class="numLets twenties" id="twentyseven" data-number=27>27</li>
+            <li class="numLets twenties" id="twentyeight" data-number=28>28</li>
+            <li class="numLets twenties" id="twentynine" data-number=29>29</li>
+            <li class="numLets thirties" id="thirty" data-number=30>30</li>
+            <li class="numLets thirties" id="thirtyone" data-number=31>31</li>
+            <li class="numLets thirties" id="thirtytwo" data-number=32>32</li>
+            <li class="numLets thirties" id="thirtythree" data-number=33>33</li>
+            <li class="numLets thirties" id="thirtyfour" data-number=34>34</li>
+            <li class="numLets thirties" id="thirtyfive" data-number=35>35</li>
+            <li class="numLets thirties" id="thirtysix" data-number=36>36</li>
+            <li class="numLets thirties" id="thirtyseven" data-number=37>37</li>
+            <li class="numLets thirties" id="thirtyeight" data-number=38>38</li>
+            <li class="numLets thirties" id="thirtynine" data-number=39>39</li>
+            <li class="numLets forties" id="forty" data-number=40>40</li>
+            <li class="numLets forties" id="fortyone" data-number=41>41</li>
+            <li class="numLets forties" id="fortytwo" data-number=42>42</li>
+            <li class="numLets forties" id="fortythree" data-number=43>43</li>
+            <li class="numLets forties" id="fortyfour" data-number=44>44</li>
+            <li class="numLets forties" id="fortyfive" data-number=45>45</li>
+            <li class="numLets forties" id="fortysix" data-number=46>46</li>
+            <li class="numLets forties" id="fortyseven" data-number=47>47</li>
+            <li class="numLets forties" id="fortyeight" data-number=48>48</li>
+            <li class="numLets forties" id="fortynine" data-number=49>49</li>
+            <li class="numLets fifties" id="fifty" data-number=50>50</li>
+            <li class="numLets fifties" id="fiftyone" data-number=51>51</li>
+            <li class="numLets fifties" id="fiftytwo" data-number=52>52</li>
+            <li class="numLets fifties" id="fiftythree" data-number=53>53</li>
+            <li class="numLets fifties" id="fiftyfour" data-number=54>54</li>
+            <li class="numLets fifties" id="fiftyfive" data-number=55>55</li>
+            <li class="numLets fifties" id="fiftysix" data-number=56>56</li>
+            <li class="numLets fifties" id="fiftyseven" data-number=57>57</li>
+            <li class="numLets fifties" id="fiftyeight" data-number=58>58</li>
+            <li class="numLets fifties" id="fiftynine" data-number=59>59</li>
+            <li class="numLets sixties" id="sixty" data-number=60>60</li>
+            <li class="numLets sixties" id="sixtyone" data-number=61>61</li>
+            <li class="numLets sixties" id="sixtytwo" data-number=62>62</li>
+            <li class="numLets sixties" id="sixtythree" data-number=63>63</li>
+            <li class="numLets sixties" id="sixtyfour" data-number=64>64</li>
+            <li class="numLets sixties" id="sixtyfive" data-number=65>65</li>
+            <li class="numLets sixties" id="sixtysix" data-number=66>66</li>
+            <li class="numLets sixties" id="sixtyseven" data-number=67>67</li>
+            <li class="numLets sixties" id="sixtyeight" data-number=68>68</li>
+            <li class="numLets sixties" id="sixtynine" data-number=69>69</li>
+            <li class="numLets seventies" id="seventy" data-number=70>70</li>
+            <li class="numLets seventies" id="seventyone" data-number=71>71</li>
+            <li class="numLets seventies" id="seventtwo" data-number=72>72</li>
+            <li class="numLets seventies" id="seventythree" data-number=73>73</li>
+            <li class="numLets seventies" id="seventfour" data-number=74>74</li>
+            <li class="numLets seventies" id="seventfive" data-number=75>75</li>
+            <li class="numLets seventies" id="seventysix" data-number=76>76</li>
+            <li class="numLets seventies" id="seventyseven" data-number=77>77</li>
+            <li class="numLets seventies" id="seventyeight" data-number=78>78</li>
+            <li class="numLets seventies" id="seventynine" data-number=79>79</li>
+            <li class="numLets eighties" id="eighty" data-number=60>80</li>
+            <li class="numLets eighties" id="eightyone" data-number=81>81</li>
+            <li class="numLets eighties" id="eightytwo" data-number=82>82</li>
+            <li class="numLets eighties" id="eightythree" data-number=83>83</li>
+            <li class="numLets eighties" id="eightyfour" data-number=84>84</li>
+            <li class="numLets eighties" id="eightyfive" data-number=85>85</li>
+            <li class="numLets eighties" id="eightysix" data-number=86>86</li>
+            <li class="numLets eighties" id="eightyseven" data-number=87>87</li>
+            <li class="numLets eighties" id="eightyeight" data-number=88>88</li>
+            <li class="numLets eighties" id="eightynine" data-number=89>89</li>
+            <li class="numLets nineties" id="ninety" data-number=90>90</li>
+            <li class="numLets nineties" id="ninetyone" data-number=91>91</li>
+            <li class="numLets nineties" id="ninetytwo" data-number=92>92</li>
+            <li class="numLets nineties" id="ninetythree" data-number=93>93</li>
+            <li class="numLets nineties" id="ninetyfour" data-number=94>94</li>
+            <li class="numLets nineties" id="ninetyfive" data-number=95>95</li>
+            <li class="numLets nineties" id="ninetysix" data-number=96>96</li>
+            <li class="numLets nineties" id="ninetyseven" data-number=97>97</li>
+            <li class="numLets nineties" id="ninetyeight" data-number=98>98</li>
+            <li class="numLets nineties" id="ninetynine" data-number=99>99</li>
+            <div id="cover"></div>
+        </ul>
+        
         <br>
-        <h1 id="randomNumber"></h1>
+        
+        <div id="ui-box">
+            <div id="button-box">
+                <h2 class="button" id="startBtn">GET NUMBER</h2>
+                <h2 class="button" id="replay">REPLAY</h2>
+            </div>
+            <div id="unicorn-box">
+                <img class="unicorns" src="images/unicorn.png">
+                <img class="unicorns" src="images/unicorn.png">
+                <img class="unicorns" src="images/unicorn.png">
+                <img class="unicorns" src="images/unicorn.png">
+                <img class="unicorns" src="images/unicorn.png">
+                <img class="unicorns" src="images/unicorn.png">
+                <img class="unicorns" src="images/unicorn.png">
+                <img class="unicorns" src="images/unicorn.png">
+                <img class="unicorns" src="images/unicorn.png">
+                <img class="unicorns" src="images/unicorn.png">
+            </div>
+        </div>
+
+        <div id="gameover"></div>
+            <h1 id=congrats>GREAT JOB!</h1>
+            <h1 id='playagain'>Play Again</h1>    
     </body>
-    <script src='script.js'></script>
+    <script src='numbers-script.js'></script>
 </html>
