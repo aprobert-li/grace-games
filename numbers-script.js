@@ -6,16 +6,16 @@ var audio;
 var numberAudio;
 var audioBoom;
 
-var btn = document.querySelector("button");
+var btn = document.querySelector("#startBtn");
 
-btn.addEventListener("click", getNumber);
 btn.addEventListener("touchstart", getNumber);
+btn.addEventListener("mouseup", getNumber);
 
 var cover = document.querySelector('#cover');
 
 function getNumber() {
-  btn.removeEventListener("click", getNumber);
   btn.removeEventListener("touchstart", getNumber);
+  btn.removeEventListener("mouseup", getNumber);
   cover.style.display = "none";
   replay.style.display = "inline-block";
   console.log("NEW CLICK");
@@ -35,7 +35,8 @@ function getNumber() {
       getNumber();
     } 
     else {
-      btn.removeEventListener("click", getNumber);
+      btn.removeEventListener("touchstart", getNumber);
+      btn.removeEventListener("mouseup", getNumber);
     }
   }
   
@@ -44,7 +45,7 @@ function getNumber() {
 
 function choosing() {
   var counter = 0;
-  var numbers = document.querySelectorAll(".numbers");
+  var numbers = document.querySelectorAll(".numLets");
   function chooseNumber() {
     var chosen = this.dataset.number;
     var chosenEl = document.getElementById(this.id);
@@ -66,6 +67,9 @@ function choosing() {
         btn.addEventListener("click", getNumber);
         replay.style.display = "none";
         counter++;
+        if(counter < 10) {
+          setTimeout(getNumber, 2000);
+        }
         if(counter == 10) {
           alert("ALL DONE");
         }

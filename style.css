@@ -1,3 +1,6 @@
+body {
+    background: url(images/bg-unicorn-01.png) no-repeat center center fixed;
+}
 h1 {
     color: chocolate;
 }
@@ -14,25 +17,22 @@ h1 {
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
     list-style: none;
-    background-color: tomato;
+    background-color: none;
     padding: 0;
 }
-.numbers {
+.numLets {
     font-size: 3vw;
     text-align: center;
-    background-color: darkslategrey;
+    background-color: white;
+    color: slategray;
+    font-weight: bolder;
     padding: 2%;
     margin: 2%;
     border: 1px solid whitesmoke;
 }
-.numbers:hover {
+.numLets:hover {
     cursor: pointer;
 }
-#cover {
-    background-color: none;
-    opacity: 0.7;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: none;
+.teens {
+    color: violet;
 }
