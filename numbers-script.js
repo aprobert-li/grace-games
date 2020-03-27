@@ -8,14 +8,14 @@ var audioBoom;
 
 var btn = document.querySelector("#startBtn");
 
-btn.addEventListener("touchstart", getNumber);
-btn.addEventListener("mouseup", getNumber);
+btn.addEventListener("touchend", getNumber);
+btn.addEventListener("click", getNumber);
 
 var cover = document.querySelector('#cover');
 
 function getNumber() {
-  btn.removeEventListener("touchstart", getNumber);
-  btn.removeEventListener("mouseup", getNumber);
+  btn.removeEventListener("touchend", getNumber);
+  btn.removeEventListener("click", getNumber);
   cover.style.display = "none";
   replay.style.display = "inline-block";
   randomNumber = Math.floor(Math.random() * 10);
@@ -31,8 +31,8 @@ function getNumber() {
       getNumber();
     } 
     else {
-      btn.removeEventListener("touchstart", getNumber);
-      btn.removeEventListener("mouseup", getNumber);
+      btn.removeEventListener("touchend", getNumber);
+      btn.removeEventListener("click", getNumber);
     }
   }
 }
@@ -60,8 +60,8 @@ function getNumber() {
         audioBoom.src="audio/correct.mp3";
         audioBoom.play();
         cover.style.display = "block";
-        btn.addEventListener("touchstart", getNumber);
-        btn.addEventListener("mouseup", getNumber);
+        btn.addEventListener("touchend", getNumber);
+        btn.addEventListener("click", getNumber);
         replay.style.display = "none";
         unicorns[counter].style.opacity = 1;
         counter++;
@@ -74,13 +74,13 @@ function getNumber() {
     }
   }
   for (n of numbers) {
-    n.addEventListener("touchstart", chooseNumber);
-    n.addEventListener("mouseup", chooseNumber);
+    n.addEventListener("touchend", chooseNumber);
+    n.addEventListener("click", chooseNumber);
   }
 
 var replay = document.querySelector('#replay');
-replay.addEventListener("touchstart", replayAudio);
-replay.addEventListener("mouseup", replayAudio);
+replay.addEventListener("touchend", replayAudio);
+replay.addEventListener("click", replayAudio);
 function replayAudio() {
   numberAudio.play();
 }
@@ -104,8 +104,8 @@ function playagain() {
   for (n of numbers) {
     n.style.backgroundColor="white";
   }
-  btn.addEventListener("touchstart", getNumber);
-  btn.addEventListener("mouseup", getNumber);
+  btn.addEventListener("touchend", getNumber);
+  btn.addEventListener("click", getNumber);
   usedArray = [];
 }
 
