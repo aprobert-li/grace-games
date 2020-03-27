@@ -42,10 +42,11 @@ function getNumber() {
   
 }
 
-
 function choosing() {
   var counter = 0;
   var numbers = document.querySelectorAll(".numLets");
+  var unicorns = document.querySelectorAll('.unicorns');
+
   function chooseNumber() {
     var chosen = this.dataset.number;
     var chosenEl = document.getElementById(this.id);
@@ -57,33 +58,36 @@ function choosing() {
         audio.play();
     }
     
-    if (randomNumber == chosen) {
-        chosenEl.style.backgroundColor = "yellow";
+    if (randomNumber == chosen && counter < 10) {
+        chosenEl.style.backgroundColor = "#F3A3E1";
         audio.pause();
         audioBoom = document.createElement('audio');
         audioBoom.src="audio/correct.mp3";
         audioBoom.play();
         cover.style.display = "block";
-        btn.addEventListener("click", getNumber);
+        btn.addEventListener("touchstart", getNumber);
+        btn.addEventListener("mouseup", getNumber);
         replay.style.display = "none";
+        unicorns[counter].style.opacity = 1;
         counter++;
-        if(counter < 10) {
-          setTimeout(getNumber, 2000);
-        }
+        
         if(counter == 10) {
           alert("ALL DONE");
         }
     }
   }
   for (n of numbers) {
-    n.addEventListener("click", chooseNumber);
+    n.addEventListener("touchstart", chooseNumber);
+    n.addEventListener("mouseup", chooseNumber);
   }
 }
 
 var replay = document.querySelector('#replay');
-replay.addEventListener("click", function() {
+replay.addEventListener("touchstart", replayAudio);
+replay.addEventListener("mouseup", replayAudio);
+function replayAudio() {
   numberAudio.play();
-})
+}
 
 
 

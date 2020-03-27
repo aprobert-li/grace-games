@@ -1,8 +1,10 @@
-body {
-    background: url(images/bg-unicorn-01.png) no-repeat center center fixed;
+* {
+    box-sizing: border-box;
 }
-h1 {
-    color: chocolate;
+
+body {
+    /*background: url(images/y-so-serious.png) repeat center center fixed;*/
+    font-family: 'Open Sans', sans-serif;
 }
 .bigBtn {
     text-align: center;
@@ -11,28 +13,113 @@ h1 {
     border: 3px solid goldenrod;
     background-color: honeydew;
 }
+.button {
+    display: inline-block;
+    position: relative;
+    font-size: 1vw;
+    text-align: center;
+    padding: 1.5% 2%;
+    background-color:#AE9BBE;
+    color: white;
+    border: 0.2em solid purple;
+}
+.button {
+    cursor: pointer;
+    margin-right: 5%;
+}
 #container {
     display: grid;
+    width: 99vw;
+    height: 80vh;
     position: relative;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-rows: auto;
     list-style: none;
     background-color: none;
     padding: 0;
 }
 .numLets {
-    font-size: 3vw;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vw;
     background-color: white;
     color: slategray;
-    font-weight: bolder;
-    padding: 2%;
-    margin: 2%;
-    border: 1px solid whitesmoke;
+    font-weight: 700;
+    padding: 1.5%;
+    margin: 3%;
+    border: 0.2em solid #AE9BBE;
 }
 .numLets:hover {
     cursor: pointer;
 }
 .teens {
     color: violet;
+}
+.twenties {
+    color: rgb(106, 190, 190);
+}
+.thirties {
+    color: #F2BE4F;
+}
+.forties {
+    color: #77C975;
+}
+.fifties {
+    color: #50ADD2;
+}
+.sixties {
+    color: #F24F90;
+}
+.seventies {
+    color: #3EF3A2;
+}
+.eighties {
+    color: #D6DE3B;
+}
+.nineties {
+    color: #C84731;
+}
+#ui-box {
+    width: 98vw;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.25fr 1.75fr;
+    margin-top: 3%;
+    margin-left: 1%;
+}
+.unicorns {
+    opacity: 0;
+}
+#gameover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: seashell;
+    opacity: 0.9;
+}
+#congrats {
+    font-size: 7vw;
+    position: absolute;
+    display: block;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-weight: bolder;
+}
+#playagain {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    background-color: springgreen;
+    color: white;
+    border: 0.2em solid #A3F3A9;
+    padding: 1% 2%;
+    opacity: 1;
 }
