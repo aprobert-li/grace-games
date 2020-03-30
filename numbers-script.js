@@ -35,7 +35,8 @@ for (a=0; a < 10; a++) {
 
 //Getting a new random number
 var btn = document.querySelector("#startBtn");
-btn.addEventListener("click", getNumber);
+//btn.addEventListener("click", getNumber);
+ btn.addEventListener("touch", getNumber);
 
 
 function getNumber() {
