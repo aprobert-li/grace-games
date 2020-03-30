@@ -6,6 +6,8 @@
 
 //Covers the numbers so they can't be clicked after selecting correct answer
 var cover = document.querySelector('#cover');
+var h4 = document.querySelector('h4');
+h4.style.color = 'red';
 
 //Responsive design stuff
 var buttons = document.querySelectorAll('.button');
