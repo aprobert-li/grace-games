@@ -89,6 +89,14 @@ body {
     margin-top: 3%;
     margin-left: 1%;
 }
+#cover {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 .unicorns {
     opacity: 0;
 }

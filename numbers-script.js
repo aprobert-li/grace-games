@@ -1,11 +1,24 @@
-var randomNumber;
-var usedArray = [];
 //var numberCount = 0;
 //var numberAudio;
+//var audio;
 
-var audio;
+//UI Variables
+
+//Covers the numbers so they can't be clicked after selecting correct answer
+var cover = document.querySelector('#cover');
+
+//Responsive design stuff
+var buttons = document.querySelectorAll('.button');
+if (window.innerWidth < 1000) {
+  btn.style.fontSize = "3vw";
+}
+
+//Variables for storing numbers
+var randomNumber;
+var usedArray = [];
+
+//Variables for audio
 var audioEl = [];
-var audioId = [];
 var audioBoom;
 audioBoom = document.createElement('audio');
 audioBoom.src="audio/correct.mp3";
@@ -15,67 +28,66 @@ audioBoom.autoplay=true;
 for (a=0; a < 10; a++) {
     audioEl[a] = document.createElement('audio');
     audioEl[a].src=`audio/${a}.mp3`;
-    audioEl[a].autoplay=true;
+    //audioEl[a].autoplay=true;
 }
 
+//Getting a new random number
 var btn = document.querySelector("#startBtn");
-
-//btn.addEventListener("touchend", getNumber);
 btn.addEventListener("click", getNumber);
 
-var cover = document.querySelector('#cover');
-
-var buttons = document.querySelectorAll('.button');
-if (window.innerWidth < 1000) {
-  btn.style.fontSize = "3vw";
-}
 
 function getNumber() {
-  //btn.removeEventListener("touch", getNumber);
-  btn.removeEventListener("click", getNumber);
+  //Styling to make sure the cover is gone and REPLAY button shows
   cover.style.display = "none";
   replay.style.display = "inline-block";
+
+  //Create random number and remove click event so it won't create another number yet
   randomNumber = Math.floor(Math.random() * 10);
+  btn.removeEventListener("click", getNumber);
+
+  //Conditional logic to be make sure it gets a number that hasn't been used yet
   if (!usedArray.includes(randomNumber)) {
-    usedArray.push(randomNumber);
-    //numberAudio = document.createElement('audio');
-    //numberAudio.src=`audio/${randomNumber}.mp3`;
-    console.log(randomNumber);
     audioEl[randomNumber].play();
-    chooseNumber();
-    return randomNumber;
+    usedArray.push(randomNumber);
+    audioEl[randomNumber].addEventListener("ended", chooseNumber);
+    //numberAudio = document.createElement('audio');
+    //numberAudio.src=`audio/${randomNumber}.mp3`;    
+    //chooseNumber();
+    //return randomNumber;
   } else {
-    if (usedArray.length < 10) {
+    getNumber();
+    /*if (usedArray.length < 10) {
       getNumber();
     } 
     else {
-      //btn.removeEventListener("touch", getNumber);
       btn.removeEventListener("click", getNumber);
-    }
+    }*/
   }
 }
 
+//Variables for all the numbers, count correct answers, and for the unicorns
   var counter = 0;
-  
   var numbers = document.querySelectorAll(".numLets");
   var unicorns = document.querySelectorAll('.unicorns');
 
   function chooseNumber() {
+    //Get the number that has been clicked
     var chosen = this.dataset.number;
     var chosenEl = document.getElementById(this.id);
 
+    //If the clicked number is NOT the same as the random number then play the number's audio
     if (randomNumber !== chosen) {
         //audio = document.createElement('audio');
         //audio.src=`audio/${chosen}.mp3`;
         audioEl[chosen].play();
     }
     
+    //If the clicked number and random number are the same and the counter is less than 10, then do stuff
     if (randomNumber == chosen && counter < 10) {
         chosenEl.style.backgroundColor = "#F3A3E1";
-        audio[chosen].pause();
+        audioEl[chosen].pause();
         audioBoom.play();
         cover.style.display = "block";
-        //btn.addEventListener("touch", getNumber);
         btn.addEventListener("click", getNumber);
         replay.style.display = "none";
         unicorns[counter].style.opacity = 1;
@@ -89,28 +101,28 @@ function getNumber() {
     }
   }
   for (n of numbers) {
-    //n.addEventListener("touch", chooseNumber);
     n.addEventListener("click", chooseNumber);
   }
 
+
+//Play the random number audio again in case player forgot or needs to hear it again
 var replay = document.querySelector('#replay');
-//replay.addEventListener("touch", replayAudio);
 replay.addEventListener("click", replayAudio);
+
 function replayAudio() {
   //numberAudio.play();
-  console.log(randomNumber);
   audioEl[randomNumber].play();
 }
+
+
+//Play the game again.  Reset all the variables back to the start state
 
 var playAgainBtn = document.querySelector('#playagain');
 var gameOver =document.querySelector('#gameover');
 var congrats =document.querySelector('#congrats');
-//playAgainBtn.addEventListener('touch', playagain);
 playAgainBtn.addEventListener("click", playagain);
 
-
 function playagain() {
-  
   playAgainBtn.style.display="none";
   congrats.style.display="none";
   gameOver.style.display="none";
@@ -121,9 +133,11 @@ function playagain() {
   for (n of numbers) {
     n.style.backgroundColor="white";
   }
-  //btn.addEventListener("touch", getNumber);
-  btn.addEventListener("click", getNumber);
+  //btn.addEventListener("click", getNumber);
   usedArray = [];
+  console.log("Used array is " + usedArray);
+  console.log("counter is " + counter);
+  console.log("random number is " + randomNumber);
 }
 
 
