@@ -63,18 +63,16 @@ function getNumber() {
   function chooseNumber() {
     var chosen = this.dataset.number;
     var chosenEl = document.getElementById(this.id);
-    console.log(chosen);
 
     if (randomNumber !== chosen) {
-        audio = document.createElement('audio');
-        audio.src=`audio/${chosen}.mp3`;
-        audio.play();
+        //audio = document.createElement('audio');
+        //audio.src=`audio/${chosen}.mp3`;
+        audioEl[chosen].play();
     }
     
     if (randomNumber == chosen && counter < 10) {
         chosenEl.style.backgroundColor = "#F3A3E1";
-        audio.pause();
-        
+        audio[chosen].pause();
         audioBoom.play();
         cover.style.display = "block";
         //btn.addEventListener("touch", getNumber);
@@ -99,7 +97,8 @@ var replay = document.querySelector('#replay');
 //replay.addEventListener("touch", replayAudio);
 replay.addEventListener("click", replayAudio);
 function replayAudio() {
-  numberAudio.play();
+  //numberAudio.play();
+  audioEl[randomNumber].play();
 }
 
 var playAgainBtn = document.querySelector('#playagain');
