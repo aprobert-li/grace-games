@@ -1,10 +1,19 @@
 var randomNumber;
 var usedArray = [];
 //var numberCount = 0;
+//var numberAudio;
 
 var audio;
-var numberAudio;
+var audioEl = [];
+var audioId = [];
 var audioBoom;
+
+//Create all the audio elements
+for (a=0; a < 10; a++) {
+    audioEl[a] = document.createElement('audio');
+    audioEl[a].src=`audio/${a}.mp3`;
+    audioEl[a].autoplay=true;
+}
 
 var btn = document.querySelector("#startBtn");
 
@@ -15,7 +24,6 @@ var cover = document.querySelector('#cover');
 
 var buttons = document.querySelectorAll('.button');
 if (window.innerWidth < 1000) {
-  alert(window.innerWidth);
   btn.style.fontSize = "3vw";
 }
 
@@ -27,9 +35,10 @@ function getNumber() {
   randomNumber = Math.floor(Math.random() * 10);
   if (!usedArray.includes(randomNumber)) {
     usedArray.push(randomNumber);
-    numberAudio = document.createElement('audio');
-    numberAudio.src=`audio/${randomNumber}.mp3`;
-    numberAudio.play();
+    //numberAudio = document.createElement('audio');
+    //numberAudio.src=`audio/${randomNumber}.mp3`;
+    console.log(randomNumber);
+    audioEl[randomNumber].play();
     chooseNumber();
     return randomNumber;
   } else {
