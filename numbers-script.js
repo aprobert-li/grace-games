@@ -8,8 +8,8 @@ var audioBoom;
 
 var btn = document.querySelector("#startBtn");
 
-btn.addEventListener("touchend", getNumber);
-//btn.addEventListener("click", getNumber);
+//btn.addEventListener("touchend", getNumber);
+btn.addEventListener("click", getNumber);
 
 var cover = document.querySelector('#cover');
 
@@ -20,8 +20,8 @@ if (window.innerWidth < 1000) {
 }
 
 function getNumber() {
-  btn.removeEventListener("touch", getNumber);
-  //btn.removeEventListener("click", getNumber);
+  //btn.removeEventListener("touch", getNumber);
+  btn.removeEventListener("click", getNumber);
   cover.style.display = "none";
   replay.style.display = "inline-block";
   randomNumber = Math.floor(Math.random() * 10);
@@ -37,8 +37,8 @@ function getNumber() {
       getNumber();
     } 
     else {
-      btn.removeEventListener("touch", getNumber);
-      //btn.removeEventListener("click", getNumber);
+      //btn.removeEventListener("touch", getNumber);
+      btn.removeEventListener("click", getNumber);
     }
   }
 }
@@ -66,8 +66,8 @@ function getNumber() {
         audioBoom.src="audio/correct.mp3";
         audioBoom.play();
         cover.style.display = "block";
-        btn.addEventListener("touch", getNumber);
-        //btn.addEventListener("click", getNumber);
+        //btn.addEventListener("touch", getNumber);
+        btn.addEventListener("click", getNumber);
         replay.style.display = "none";
         unicorns[counter].style.opacity = 1;
         counter++;
@@ -80,8 +80,8 @@ function getNumber() {
     }
   }
   for (n of numbers) {
-    n.addEventListener("touch", chooseNumber);
-    //n.addEventListener("click", chooseNumber);
+    //n.addEventListener("touch", chooseNumber);
+    n.addEventListener("click", chooseNumber);
   }
 
 var replay = document.querySelector('#replay');
@@ -94,8 +94,8 @@ function replayAudio() {
 var playAgainBtn = document.querySelector('#playagain');
 var gameOver =document.querySelector('#gameover');
 var congrats =document.querySelector('#congrats');
-playAgainBtn.addEventListener('touch', playagain);
-//playAgainBtn.addEventListener("click", playagain);
+//playAgainBtn.addEventListener('touch', playagain);
+playAgainBtn.addEventListener("click", playagain);
 
 
 function playagain() {
@@ -110,8 +110,8 @@ function playagain() {
   for (n of numbers) {
     n.style.backgroundColor="white";
   }
-  btn.addEventListener("touch", getNumber);
-  //btn.addEventListener("click", getNumber);
+  //btn.addEventListener("touch", getNumber);
+  btn.addEventListener("click", getNumber);
   usedArray = [];
 }
 
