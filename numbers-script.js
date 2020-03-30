@@ -7,6 +7,9 @@ var audio;
 var audioEl = [];
 var audioId = [];
 var audioBoom;
+audioBoom = document.createElement('audio');
+audioBoom.src="audio/correct.mp3";
+audioBoom.autoplay=true;
 
 //Create all the audio elements
 for (a=0; a < 10; a++) {
@@ -71,8 +74,7 @@ function getNumber() {
     if (randomNumber == chosen && counter < 10) {
         chosenEl.style.backgroundColor = "#F3A3E1";
         audio.pause();
-        audioBoom = document.createElement('audio');
-        audioBoom.src="audio/correct.mp3";
+        
         audioBoom.play();
         cover.style.display = "block";
         //btn.addEventListener("touch", getNumber);
@@ -94,8 +96,8 @@ function getNumber() {
   }
 
 var replay = document.querySelector('#replay');
-replay.addEventListener("touch", replayAudio);
-//replay.addEventListener("click", replayAudio);
+//replay.addEventListener("touch", replayAudio);
+replay.addEventListener("click", replayAudio);
 function replayAudio() {
   numberAudio.play();
 }
