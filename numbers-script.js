@@ -98,6 +98,7 @@ var replay = document.querySelector('#replay');
 replay.addEventListener("click", replayAudio);
 function replayAudio() {
   //numberAudio.play();
+  console.log(randomNumber);
   audioEl[randomNumber].play();
 }
 
