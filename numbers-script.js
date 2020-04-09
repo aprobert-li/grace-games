@@ -6,14 +6,12 @@
 
 //Covers the numbers so they can't be clicked after selecting correct answer
 var cover = document.querySelector('#cover');
-var h4 = document.querySelector('h4');
-h4.style.color = 'red';
 
 //Responsive design stuff
-var buttons = document.querySelectorAll('.button');
+/*var buttons = document.querySelectorAll('.button');
 if (window.innerWidth < 1000) {
   btn.style.fontSize = "3vw";
-}
+}*/
 
 //Variables for storing numbers
 var randomNumber;
@@ -22,21 +20,23 @@ var usedArray = [];
 //Variables for audio
 var audioEl = [];
 var audioBoom;
+var audiocongrats;
 audioBoom = document.createElement('audio');
 audioBoom.src="audio/correct.mp3";
-audioBoom.autoplay=true;
+//audioBoom.autoplay=true;
 
 //Create all the audio elements
-for (a=0; a < 10; a++) {
+for (a=0; a < 100; a++) {
     audioEl[a] = document.createElement('audio');
     audioEl[a].src=`audio/${a}.mp3`;
     //audioEl[a].autoplay=true;
 }
 
 //Getting a new random number
+
 var btn = document.querySelector("#startBtn");
-//btn.addEventListener("click", getNumber);
- btn.addEventListener("touch", getNumber);
+btn.addEventListener("click", getNumber);
+//btn.addEventListener("touchstart", getNumber);
 
 
 function getNumber() {
@@ -45,7 +45,7 @@ function getNumber() {
   replay.style.display = "inline-block";
 
   //Create random number and remove click event so it won't create another number yet
-  randomNumber = Math.floor(Math.random() * 10);
+  randomNumber = Math.floor(Math.random() * 100);
   btn.removeEventListener("click", getNumber);
 
   //Conditional logic to be make sure it gets a number that hasn't been used yet
@@ -100,6 +100,11 @@ function getNumber() {
           playAgainBtn.style.display="block";
           congrats.style.display="block";
           gameOver.style.display="block";
+          unicorn_win.style.display = "block";
+          audioBoom.pause();
+          audiocongrats = document.createElement('audio');
+          audiocongrats.src = "audio/congratulations.mp3";
+          audiocongrats.play();
         }
     }
   }
@@ -109,6 +114,7 @@ function getNumber() {
 
 
 //Play the random number audio again in case player forgot or needs to hear it again
+
 var replay = document.querySelector('#replay');
 replay.addEventListener("click", replayAudio);
 
@@ -123,12 +129,14 @@ function replayAudio() {
 var playAgainBtn = document.querySelector('#playagain');
 var gameOver =document.querySelector('#gameover');
 var congrats =document.querySelector('#congrats');
+var unicorn_win = document.querySelector('#unicorn-win');
 playAgainBtn.addEventListener("click", playagain);
 
 function playagain() {
   playAgainBtn.style.display="none";
   congrats.style.display="none";
   gameOver.style.display="none";
+  unicorn_win.style.display="none";
   counter=0;
   for (u of unicorns) {
     u.style.opacity=0;

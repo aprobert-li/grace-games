@@ -3,7 +3,6 @@
 }
 
 body {
-    /*background: url(images/y-so-serious.png) repeat center center fixed;*/
     font-family: 'Open Sans', sans-serif;
 }
 .bigBtn {
@@ -16,8 +15,9 @@ body {
 .button {
     display: inline-block;
     position: relative;
-    font-size: 1vw;
     text-align: center;
+    font-size: 1vw;
+    font-weight: 700;
     padding: 1.5% 2%;
     background-color:#AE9BBE;
     color: white;
@@ -32,7 +32,6 @@ body {
 #container {
     display: grid;
     width: 99vw;
-    height: 80vh;
     position: relative;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: auto;
@@ -48,8 +47,8 @@ body {
     background-color: white;
     color: slategray;
     font-weight: 700;
-    padding: 1.5%;
-    margin: 3%;
+    padding: 2% 1%;
+    margin: 3% 7%;
     border: 0.2em solid #AE9BBE;
 }
 .numLets:hover {
@@ -87,9 +86,9 @@ body {
     position: relative;
     display: grid;
     grid-template-columns: 1.25fr 1.75fr;
-    margin-top: 3%;
     margin-left: 1%;
 }
+
 #cover {
     display: none;
     position: absolute;
@@ -121,7 +120,7 @@ body {
     transform: translateX(-50%);
     text-align: center;
     font-weight: bolder;
-    color: #75E37D;
+    color: violet;
 }
 #playagain {
     display: none;
@@ -130,9 +129,38 @@ body {
     top: 50%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #75E37D;
+    background-color: violet;
     color: white;
     border: 0.2em solid #BDF4C1;
     padding: 1% 2%;
     opacity: 1;
 }
+
+@media screen and (max-width: 900px) {
+    .numLets {
+        font-size: 4vw;
+    }
+    #container {
+        margin-bottom: 0;
+    }
+    .button {
+        font-size: 3vw;
+        padding: 2% 3%;
+    }
+    #ui-box {
+        margin-top: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .unicorns {
+        width: 10%;
+    }
+}
+/*@media screen and (orientation: landscape) {
+    #ui-box {
+        top: 70vh;
+    }
+    .button {
+        font-size: 3vw;
+    }
+}*/

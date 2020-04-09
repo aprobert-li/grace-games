@@ -1,0 +1,33 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.links {
+    background-color: orchid;
+    width: 30vw;
+    border: 1em solid purple;
+    margin-bottom: 5%;
+    padding: 1% 0.5%;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+h1 {
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 3vw;
+    margin-right: 3%;
+}
+img {
+    width: 25%;
+    display: inline-block;
+    vertical-align: middle;
+}
+#spelling_pic {
+    width: 20%;
+}
+a {
+    text-decoration: none;
+}

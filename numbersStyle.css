@@ -1,0 +1,229 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+.bigBtn {
+    text-align: center;
+    font-size: 4vw;
+    padding: 2% 5%;
+    border: 3px solid goldenrod;
+    background-color: honeydew;
+}
+.button {
+    display: inline-block;
+    position: relative;
+    font-size: 0.5vw;
+    font-weight: 700;
+    padding: 2% 1.5%;
+    background-color:#AE9BBE;
+    color: white;
+    border: 0.2em solid purple;
+    cursor: pointer;  
+    margin-right: 5%;  
+    cursor: pointer;
+    width: 40%;
+    text-align: center;
+}
+.button:hover {
+    background-color: plum;
+}
+.icon-btn {
+    width: 25%;
+    display: inline-block;
+    vertical-align: middle;
+}
+#icon-replay {
+    width: 20%;
+}
+h2 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4%;
+}
+#replay {
+    display: none;
+}
+#container {
+    display: grid;
+    width: 99vw;
+    position: relative;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: auto;
+    list-style: none;
+    background-color: none;
+    padding: 0;
+}
+.numLets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vw;
+    background-color: white;
+    color: slategray;
+    font-weight: 700;
+    padding: 2% 1%;
+    margin: 3% 7%;
+    border: 0.2em solid #AE9BBE;
+}
+.numLets:hover {
+    cursor: pointer;
+}
+.teens {
+    color: violet;
+}
+.twenties {
+    color: rgb(106, 190, 190);
+}
+.thirties {
+    color: #F2BE4F;
+}
+.forties {
+    color: #77C975;
+}
+.fifties {
+    color: #50ADD2;
+}
+.sixties {
+    color: #F24F90;
+}
+.seventies {
+    color: #3EF3A2;
+}
+.eighties {
+    color: #D6DE3B;
+}
+.nineties {
+    color: #C84731;
+}
+#ui-box {
+    width: 98vw;
+    position: relative;
+    margin-left: 1%;
+    vertical-align: top;
+    margin-top: -1%;
+}
+#button-box {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+}
+#unicorn-box {
+    display: inline-block;
+    width: 65%;
+}
+#cover {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.unicorns {
+    opacity: 0;
+}
+#gameover {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: whitesmoke;
+    opacity: 0.95;
+}
+#congrats {
+    display: none;
+    font-size: 7vw;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-weight: bolder;
+    color: violet;
+}
+#playagain {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: violet;
+    color: white;
+    border: 0.2em solid #BB11A2;
+    padding: 1% 2%;
+    opacity: 1;
+}
+#playagain:hover {
+    background-color: plum;
+}
+#unicorn-win {
+    display: none;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15%;
+}
+
+#castle {
+    position: absolute;
+    right: 2vw;
+    bottom: 2vh;
+}
+
+@media screen and (max-width: 900px) {
+    .numLets {
+        font-size: 4vw;
+    }
+    #container {
+        margin-bottom: 0;
+    }
+    #ui-box {
+        margin-top: 0;
+        /*grid-template-columns: 1fr;
+        grid-template-rows: auto;*/
+    }
+    #button-box {
+        display: block;
+        width: 100%;
+    }
+    #unicorn-box {
+        display: block;
+        width: 100%;
+        margin-top: 2%;
+    }
+    .unicorns {
+        width: 10%;
+    }
+    .button {
+        font-size: 2vw;
+        padding: 1% 2%;
+        vertical-align: bottom;
+        width: 40%;
+    }
+    .icon-btn {
+        width: 20%;
+    }
+    #unicorn-win {
+        top: 10%;
+        width: 25%;
+    }
+    #playagain {
+        top: 45%;
+    }
+}
+/*@media screen and (orientation: landscape) {
+    #ui-box {
+        top: 70vh;
+    }
+    .button {
+        font-size: 3vw;
+    }
+}*/
