@@ -62,7 +62,7 @@ function getLetter() {
     }
     
     //If the clicked number and random number are the same and the counter is less than 10, then do stuff
-    if (randomNumber == chosen && counter < 10) {
+    if (randomNumber == chosen && counter < 5) {
         chosenEl.style.backgroundColor = "#F3A3E1";
         audioEl[randomNumber].pause();
         audioBoom.play();
@@ -72,7 +72,7 @@ function getLetter() {
         unicorns[counter].style.opacity = 1;
         counter++;
         
-        if(counter == 10) {
+        if(counter == 5) {
           playAgainBtn.style.display="block";
           congrats.style.display="block";
           gameOver.style.display="block";
